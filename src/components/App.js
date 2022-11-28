@@ -53,13 +53,13 @@ function App() {
     .filter((eachAdalaber) => eachAdalaber.counselor.includes(selectSearch))
     .map((eachAdalaber) => {
       return (
-        <tr key={eachAdalaber.id}>
+        <tr key={eachAdalaber.id} className='main_form_table-tr'>
           <td>{eachAdalaber.name}</td>
           <td>{eachAdalaber.counselor}</td>
           <td>{eachAdalaber.speciality}</td>
           <td>
             {eachAdalaber.social_networks.map((eachNetwork, index) => { 
-              return <a key={index} href={eachNetwork.url}>{eachNetwork.name}</a>
+              return <a key={index} href={eachNetwork.url}>{eachNetwork.name}  </a>
             })}
           </td>
         </tr>
@@ -83,26 +83,26 @@ function App() {
           </select>
         </form>
       </header>
-      <main>
-        <table className="table">
-          <thead className='table_head'><tr>
+      <main className='main'>
+        <table className="main_table">
+          <thead className='main_table_head'><tr>
             <th>Nombre</th>
             <th>Tutora</th>
             <th>Especialidad</th>
             <th>Redes Sociales</th>
           </tr></thead>
-          <tbody className='table_body'>
+          <tbody className='main_table_body'>
             {htmlData}
           </tbody>
         </table>
-        <form>
-          <label htmlFor="adalaberName">Nombre:</label>
-          <input type="text" name='adalaberName' id='name' value={newAdalaber.name} onChange={handleNewAdalaber} />
-          <label htmlFor="counselor">Tutora:</label>
-          <input type="text" name='counselor' id='counselor' value={newAdalaber.counselor} onChange={handleNewAdalaber} />
-          <label htmlFor="speciality">Especialidad:</label>
-          <input type="text" name='speciality' id='speciality' value={newAdalaber.speciality} onChange={handleNewAdalaber} />
-          <input type="submit" value='Añadir una nueva Adalaber' onClick={handleClick} />
+        <form className='form'>
+          <label  className='form_label'  htmlFor="adalaberName">Nombre:</label>
+          <input type="text" className='form_input' name='adalaberName' id='name' value={newAdalaber.name} onChange={handleNewAdalaber} />
+          <label className='form_label' htmlFor="counselor">Tutora:</label>
+          <input type="text" name='counselor' id='counselor' value={newAdalaber.counselor} onChange={handleNewAdalaber} className='form_input' />
+          <label className='form_label'  htmlFor="speciality">Especialidad:</label>
+          <input type="text" name='speciality' id='speciality' value={newAdalaber.speciality} onChange={handleNewAdalaber} className='form_input' />
+          <input type="submit" value='Añadir una nueva Adalaber' onClick={handleClick} className='form_btn'/>
         </form>
       </main>
     </div>

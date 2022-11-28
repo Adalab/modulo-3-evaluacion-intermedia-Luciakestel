@@ -1,3 +1,7 @@
 @import 'core/reset';
 @import 'layout/header';
 @import 'layout/main';
+
+body {
+  background: linear-gradient(#48c9b0, #76d7c4, #a3e4d7, #d1f2eb);
+}
