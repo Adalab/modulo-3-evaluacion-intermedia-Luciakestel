@@ -7,11 +7,12 @@ function App() {
   //VARIABLES ESTADO
   const [adalabers, setAdalabers] = useState([]);
   const [newAdalaber, setNewAdalaber] = useState({
-    id: "",
+    id: crypto.randomUUID(),
     name: "",
     counselor: "",
     promo: "",
     speciality: "",
+    social_networks: [],
   });
   const [search, setSearch] = useState('');
   const [selectSearch, setSelectSearch] = useState('');
@@ -35,7 +36,6 @@ function App() {
       id: "",
       name: "",
       counselor: "",
-      promo: "",
       speciality: "",
     });
   }
@@ -75,7 +75,7 @@ function App() {
           <label className='header_form_label' htmlFor="nameSearch">Nombre:</label>
           <input type="text" name='nameSearch' id='name' value={search} onChange={handleSearch} className='header_form_input'/>
           <label className='header_form_label' htmlFor="counselorSearch">Tutora:</label>
-          <select name="counselor" id="counselor" onChange={handleSelectSearch} className='header_form_input'>
+          <select name="counselor" id="counselor" onChange={handleSelectSearch} value={selectSearch} className='header_form_input'>
             <option>Cualquiera</option>
             <option value="Yanelis">Yanelis</option>
             <option value="Dayana">Dayana</option>
